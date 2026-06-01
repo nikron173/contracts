@@ -123,7 +123,7 @@ type User struct {
 	LastName      string                 `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	MiddleName    string                 `protobuf:"bytes,6,opt,name=middle_name,json=middleName,proto3" json:"middle_name,omitempty"`
 	Email         string                 `protobuf:"bytes,7,opt,name=email,proto3" json:"email,omitempty"`
-	Age           string                 `protobuf:"bytes,8,opt,name=age,proto3" json:"age,omitempty"`
+	Age           uint32                 `protobuf:"varint,8,opt,name=age,proto3" json:"age,omitempty"`
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -209,11 +209,11 @@ func (x *User) GetEmail() string {
 	return ""
 }
 
-func (x *User) GetAge() string {
+func (x *User) GetAge() uint32 {
 	if x != nil {
 		return x.Age
 	}
-	return ""
+	return 0
 }
 
 func (x *User) GetCreatedAt() *timestamppb.Timestamp {
@@ -256,7 +256,7 @@ const file_account_model_proto_rawDesc = "" +
 	"\vmiddle_name\x18\x06 \x01(\tR\n" +
 	"middleName\x12\x14\n" +
 	"\x05email\x18\a \x01(\tR\x05email\x12\x10\n" +
-	"\x03age\x18\b \x01(\tR\x03age\x129\n" +
+	"\x03age\x18\b \x01(\rR\x03age\x129\n" +
 	"\n" +
 	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +

@@ -23,7 +23,7 @@ message User {
     string last_name = 5;
     string middle_name = 6;
     string email = 7;
-    string age = 8;
+    uint32 age = 8;
     google.protobuf.Timestamp created_at = 9;
     google.protobuf.Timestamp updated_at = 10;
 }
